@@ -16,16 +16,16 @@ function setup()
     properties = {
       max_speed_for_map_matching      = 180/3.6, -- 180kmph -> m/s
       -- For routing based on duration, but weighted for preferring certain roads
-      weight_name                     = 'routability',
+      -- weight_name                     = 'routability',
       -- For shortest duration without penalties for accessibility
-      -- weight_name                     = 'duration',
+       weight_name                     = 'duration',
       -- For shortest distance without penalties for accessibility
       -- weight_name                     = 'distance',
       process_call_tagless_node      = false,
       u_turn_penalty                 = 20,
       continue_straight_at_waypoint  = true,
       use_turn_restrictions          = true,
-      left_hand_driving              = false,
+      left_hand_driving              = true,
       traffic_light_penalty          = 2,
     },
 
@@ -39,13 +39,13 @@ function setup()
     cardinal_directions       = false,
 
     -- Size of the vehicle, to be limited by physical restriction of the way
-    vehicle_height = 2.0, -- in meters, 2.0m is the height slightly above biggest SUVs
-    vehicle_width = 1.9, -- in meters, ways with narrow tag are considered narrower than 2.2m
+    vehicle_height = 2.0, 
+    vehicle_width = 1.9, 
 
     -- Size of the vehicle, to be limited mostly by legal restriction of the way
-    vehicle_length = 4.8, -- in meters, 4.8m is the length of large or family car
-    vehicle_weight = 2000, -- in kilograms
-
+    vehicle_length = 4.8, 
+    vehicle_weight = 2000, 
+    
     -- a list of suffixes to suppress in name change instructions. The suffixes also include common substrings of each other
     suffix_list = {
       'N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'North', 'South', 'West', 'East', 'Nor', 'Sou', 'We', 'Ea'
