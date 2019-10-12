@@ -1,4 +1,4 @@
--- Car profile
+-- Truck profile
 
 api_version = 4
 
@@ -14,7 +14,7 @@ Measure = require("lib/measure")
 function setup()
   return {
     properties = {
-      max_speed_for_map_matching      = 180/3.6, -- 180kmph -> m/s
+      max_speed_for_map_matching      = 80/3.6, -- 80kmph -> m/s
       -- For routing based on duration, but weighted for preferring certain roads
       weight_name                     = 'routability',
       -- For shortest duration without penalties for accessibility
@@ -39,12 +39,12 @@ function setup()
     cardinal_directions       = false,
 
     -- Size of the vehicle, to be limited by physical restriction of the way
-    vehicle_height = 4.0, -- in meters, 2.0m is the height slightly above biggest SUVs
-    vehicle_width = 3.8, -- in meters, ways with narrow tag are considered narrower than 2.2m
+    vehicle_height = 5.5, 
+    vehicle_width = 4.0, -- in meters, ways with narrow tag are considered narrower than 2.2m
 
     -- Size of the vehicle, to be limited mostly by legal restriction of the way
-    vehicle_length = 4.8, -- in meters, 4.8m is the length of large or family car
-    vehicle_weight = 2000, -- in kilograms
+    vehicle_length = 8, -- in meters, 4.8m is the length of large or family car
+    vehicle_weight = 9000, -- in kilograms
 
     -- a list of suffixes to suppress in name change instructions. The suffixes also include common substrings of each other
     suffix_list = {
@@ -77,7 +77,6 @@ function setup()
     access_tag_blacklist = Set {
       'no',
       'agricultural',
-      'forestry',
       'emergency',
       'psv',
       'customers',
@@ -139,20 +138,20 @@ function setup()
 
     speeds = Sequence {
       highway = {
-        motorway        = 90,
-        motorway_link   = 45,
-        trunk           = 85,
-        trunk_link      = 40,
-        primary         = 65,
-        primary_link    = 30,
-        secondary       = 55,
-        secondary_link  = 25,
-        tertiary        = 40,
-        tertiary_link   = 20,
-        unclassified    = 25,
-        residential     = 25,
-        living_street   = 10,
-        service         = 15
+        motorway        = 60,
+        motorway_link   = 35,
+        trunk           = 40,
+        trunk_link      = 30,
+        primary         = 55,
+        primary_link    = 20,
+        secondary       = 45,
+        secondary_link  = 20,
+        tertiary        = 30,
+        tertiary_link   = 10,
+        unclassified    = 15,
+        residential     = 15,
+        living_street   = 5,
+        service         = 10
       }
     },
 
